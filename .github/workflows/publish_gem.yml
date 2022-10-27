@@ -1,0 +1,25 @@
+name: Publish gem to github private registry
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - lib/xls_function/version.rb
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Tag with the gem version
+        run: |
+          GEM_VERSION=$(ruby -e "require 'rubygems'; gemspec = Dir.glob(\"./**/*.gemspec\").first; puts Gem::Specification::load(gemspec).version")
+          TAG="v$GEM_VERSION"
+          git tag $TAG && git push origin $TAG
+      - name: build and push gem
+        run: |
+          gem build *.gemspec
+          gem push ./*.gem
+        env:
+          GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_MONEYFORWARD_API_KEY }}

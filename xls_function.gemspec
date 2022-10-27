@@ -1,0 +1,30 @@
+require_relative 'lib/xls_function/version'
+
+Gem::Specification.new do |spec|
+  spec.name          = 'xls_function'
+  spec.version       = XlsFunction::VERSION
+  spec.authors       = ['Nakakuki Shingo']
+  spec.email         = ['nakakuki.shingo@moneyforward.co.jp']
+
+  spec.summary       = 'Excel-like Functions Evaluator'
+  spec.description   = 'Excel-like Functions Evaluator'
+  spec.homepage      = 'https://github.com/moneyforward/xls_function'
+  spec.license       = 'Apache-2.0'
+  spec.required_ruby_version = Gem::Requirement.new('>= 2.7.0')
+
+  spec.metadata['homepage_uri'] = spec.homepage
+  spec.metadata['source_code_uri'] = 'https://github.com/moneyforward/xls_function'
+
+  # Specify which files should be added to the gem when it is released.
+  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
+  spec.files = Dir.chdir(File.expand_path(__dir__)) do
+    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  end
+  spec.bindir        = 'exe'
+  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.require_paths = ['lib']
+
+  spec.add_dependency 'i18n', '>= 1.10.0'
+  spec.add_dependency 'parslet', '>= 2.0.0'
+  spec.add_dependency 'wareki', '>= 1.1.0'
+end

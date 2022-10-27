@@ -1,0 +1,41 @@
+AllCops:
+  TargetRubyVersion: 2.7
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Style/WordArray:
+  Enabled: false
+
+Metrics/AbcSize:
+  Exclude:
+    - 'lib/xls_function/parse_rules/*'
+    - 'lib/xls_function/format_string/parse_rules/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/ModuleLength:
+  Max: 150
+
+Layout/LineLength:
+  Max: 150
+
+Naming/VariableNumber:
+  Enabled: false
