@@ -1,0 +1,65 @@
+en:
+  xls_function:
+    descriptions:
+      and: AND(logical1, [logical2], ...) returns TRUE if all its arguments evaluate to TRUE, and returns FALSE if one or more arguments evaluate to FALSE.
+      asc: ASC(text) For Double-byte character set (DBCS) languages, the function changes full-width (double-byte) characters to half-width (single-byte) characters.
+      char: CHAR(number) Returns the character specified by a number.
+      clean: CLEAN(text) Removes all nonprintable characters from text.
+      code: CODE(text) Returns a numeric code for the first character in a text string.
+      concat: CONCAT(text1, [text2],…) Combines the text from multiple ranges and/or strings.
+      datevalue: DATEVALUE(date_text) Converts a date that is stored as text to a serial number that Excel recognizes as a date.
+      date: DATE(year,month,day) Returns the sequential serial number that represents a particular date.
+      day: DAY(serial_number) Returns the day of a date, represented by a serial number. The day is given as an integer ranging from 1 to 31.
+      dbcs: DBCS(text) Converts half-width (single-byte) letters within a character string to full-width (double-byte) characters. The name of the function (and the characters that it converts) depends upon your language settings.
+      edate: EDATE(start_date, months) Returns the serial number that represents the date that is the indicated number of months before or after a specified date (the start_date).
+      eomonth: EOMONTH(start_date, months) Returns the serial number for the last day of the month that is the indicated number of months before or after start_date.
+      exact: EXACT(text1, text2) Compares two text strings and returns TRUE if they are exactly the same, FALSE otherwise.
+      find: FIND(find_text, within_text, [start_num]) Locate one text string within a second text string, and return the number of the starting position of the first text string from the first character of the second text string. Always counts each character, whether single-byte or double-byte, as 1, no matter what the default language setting is.
+      fixed: FIXED(number, [decimals], [no_commas]) Rounds a number to the specified number of decimals, formats the number in decimal format using a period and commas, and returns the result as text.
+      hour: HOUR(serial_number) Returns the hour of a time value. The hour is given as an integer, ranging from 0 (12:00 A.M.) to 23 (11:00 P.M.).
+      if: IF(logical_test, value_if_true, [value_if_false]) Use the IF function to return one value if a condition is true and another value if it's false.
+      ifs: IFS(logical_test1, value_if_true1, [logical_test2, value_if_true2], [logical_test3, value_if_true3],…) Checks whether one or more conditions are met, and returns a value that corresponds to the first TRUE condition.
+      int: INT(number) Rounds a number down to the nearest integer.
+      iserror: ISERROR(value) Returns TRUE if value refers to any error value.
+      isnumber: ISNUMBER(value) Returns TRUE if value refers to a number.
+      lambda: LAMBDA([parameter1, parameter2, …,] calculation) Use a LAMBDA function to create custom, reusable functions and call them by a friendly name. *Do not use this directly.
+      left: LEFT(text, [num_chars]) Returns the first character or characters in a text string, based on the number of characters you specify.
+      len: LEN(text) Returns the number of characters in a text string.
+      let: LET(name1, name_value1, calculation_or_name2, [name_value2, calculation_or_name3...]) Assigns names to calculation results. This allows storing intermediate calculations, values, or defining names inside a formula.
+      lower: LOWER(text) Converts all uppercase letters in a text string to lowercase.
+      mid: MID(text, start_num, num_chars) Returns a specific number of characters from a text string, starting at the position you specify, based on the number of characters you specify.
+      minute: MINUTE(serial_number) Returns the minutes of a time value. The minute is given as an integer, ranging from 0 to 59.
+      month: MONTH(serial_number) Returns the month of a date represented by a serial number. The month is given as an integer, ranging from 1 (January) to 12 (December).
+      not: NOT(logical) Reverses the value of its argument.
+      now: NOW() Returns the serial number of the current date and time.
+      or: OR(logical1, [logical2], ...) Returns TRUE if any of its arguments evaluate to TRUE, and returns FALSE if all of its arguments evaluate to FALSE.
+      power: POWER(number, power) Returns the result of a number raised to a power.
+      proper: Capitalizes the first letter in a text string and any other letters in text that follow any character other than a letter. Converts all other letters to lowercase letters.
+      replace: REPLACE(old_text, start_num, num_chars, new_text) Replaces part of a text string, based on the number of characters you specify, with a different text string.
+      rept: REPT(text, number_times) Repeats text a given number of times.
+      right: RIGHT(text,[num_chars]) Returns the last character or characters in a text string, based on the number of characters you specify.
+      rounddown: ROUNDDOWN(number, num_digits) Rounds a number down, toward zero.
+      roundup: ROUNDUP(number, num_digits) Rounds a number up, away from 0 (zero).
+      round: ROUND(number, num_digits) Rounds a number to a specified number of digits.
+      second: SECOND(serial_number) Returns the seconds of a time value. The second is given as an integer in the range 0 (zero) to 59.
+      sqrt: SQRT(number) Returns a positive square root.
+      substitute: SUBSTITUTE(text, old_text, new_text, [instance_num]) Substitutes new_text for old_text in a text string.
+      text: TEXT(value, format_text) Lets you change the way a number appears by applying formatting to it with format codes.
+      time: TIME(hour, minute, second) Returns the decimal number for a particular time.
+      timevalue: TIMEVALUE(time_text) Returns the decimal number of the time represented by a text string.
+      today: TODAY() Returns the serial number of the current date.
+      trim: TRIM(text) Removes all spaces from text except for single spaces between words.
+      trunc: TRUNC(number, [num_digits]) Truncates a number to an integer by removing the fractional part of the number.
+      unichar: UNICHAR(number) Returns the Unicode character that is referenced by the given numeric value.
+      unicode: UNICODE(text) Returns the number (code point) corresponding to the first character of the text.
+      upper: UPPER(text) Converts text to uppercase.
+      value: VALUE(text) Converts a text string that represents a number to a number.
+      year: YEAR(serial_number) Returns the year corresponding to a date. The year is returned as an integer in the range 1900-9999.
+    errors:
+      out_of_range: Value is out of range. %{value}
+      missing_target: Missing %{target} in %{source}.
+      number_is_negative: "%{label} is negative. %{number}"
+      cannot_convert_to_number: Cannot convert %{source} to number.
+      cannot_convert_to_date: Cannot convert %{source} to date.
+      cannot_convert_to_time: Cannot convert %{source} to time.
+      invalid_value_for_function: Invalid value for formula or function.
