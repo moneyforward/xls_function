@@ -1,6 +1,7 @@
 ja:
   xls_function:
     descriptions:
+      abs: ABS(数値) 数値の絶対値を求めます。
       and: AND(条件1, [条件2], ...) すべての引数が TRUE と評価された場合は TRUE を返し、1 つ以上の引数が FALSE と評価された場合は FALSE を返します。
       asc: ASC(文字列) 2 バイト文字セット (DBCS) 言語の場合、全角 (2 バイト) 文字を半角 (1 バイト) 文字に変更します。
       char: CHAR(数値) 数値で指定された文字を返します。
