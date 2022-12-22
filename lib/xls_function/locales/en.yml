@@ -43,7 +43,7 @@ en:
       roundup: ROUNDUP(number, num_digits) Rounds a number up, away from 0 (zero).
       round: ROUND(number, num_digits) Rounds a number to a specified number of digits.
       second: SECOND(serial_number) Returns the seconds of a time value. The second is given as an integer in the range 0 (zero) to 59.
-      sign: SIGN(number) Returns 1 if the number is positive, -1 if it is negative and 0 if it is zero.
+      sign: SIGN(number) Determines the sign of a number. Returns 1 if the number is positive, zero (0) if the number is 0, and -1 if the number is negative.
       sqrt: SQRT(number) Returns a positive square root.
       substitute: SUBSTITUTE(text, old_text, new_text, [instance_num]) Substitutes new_text for old_text in a text string.
       text: TEXT(value, format_text) Lets you change the way a number appears by applying formatting to it with format codes.
