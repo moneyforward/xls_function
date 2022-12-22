@@ -1,6 +1,7 @@
 en:
   xls_function:
     descriptions:
+      abs: ABS(number) Returns the absolute value of a number.
       and: AND(logical1, [logical2], ...) returns TRUE if all its arguments evaluate to TRUE, and returns FALSE if one or more arguments evaluate to FALSE.
       asc: ASC(text) For Double-byte character set (DBCS) languages, the function changes full-width (double-byte) characters to half-width (single-byte) characters.
       char: CHAR(number) Returns the character specified by a number.
@@ -42,6 +43,7 @@ en:
       roundup: ROUNDUP(number, num_digits) Rounds a number up, away from 0 (zero).
       round: ROUND(number, num_digits) Rounds a number to a specified number of digits.
       second: SECOND(serial_number) Returns the seconds of a time value. The second is given as an integer in the range 0 (zero) to 59.
+      sign: SIGN(number) Determines the sign of a number. Returns 1 if the number is positive, zero (0) if the number is 0, and -1 if the number is negative.
       sqrt: SQRT(number) Returns a positive square root.
       substitute: SUBSTITUTE(text, old_text, new_text, [instance_num]) Substitutes new_text for old_text in a text string.
       text: TEXT(value, format_text) Lets you change the way a number appears by applying formatting to it with format codes.
