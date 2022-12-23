@@ -14,5 +14,12 @@ RSpec.describe XlsFunction do
 
       it { is_expected.to eq('true2') }
     end
+
+    context 'when cond1 and cond2 returns false' do
+      let(:cond1) { '1 = 2' }
+      let(:cond2) { '0 > 1' }
+
+      it { is_expected.to be_nil }
+    end
   end
 end
