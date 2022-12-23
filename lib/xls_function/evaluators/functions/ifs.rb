@@ -13,6 +13,8 @@ module XlsFunction
           arg_list.each_slice(2) do |expr, value|
             return value&.evaluate(context) if expr&.evaluate(context)
           end
+
+          nil
         end
       end
     end
