@@ -64,4 +64,5 @@ en:
       cannot_convert_to_number: Cannot convert %{source} to number.
       cannot_convert_to_date: Cannot convert %{source} to date.
       cannot_convert_to_time: Cannot convert %{source} to time.
+      cannot_divide_by_zero: "Cannot divide by zero."
       invalid_value_for_function: Invalid value for formula or function.
