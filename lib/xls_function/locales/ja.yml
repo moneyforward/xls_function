@@ -64,4 +64,5 @@ ja:
       cannot_convert_to_number: "%{source}は数値に変換できません。"
       cannot_convert_to_date: "%{source}は日付に変換できません。"
       cannot_convert_to_time: "%{source}は時刻に変換できません。"
+      cannot_divide_by_zero: "0除算が発生しました。"
       invalid_value_for_function: 値が数式または関数に対して無効です。

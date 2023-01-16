@@ -34,12 +34,18 @@ module XlsFunction
       def na(error_info = '')
         new(ERROR_NA, error_info)
       end
+
+      # @return #DIV/0!
+      def div0!(error_info = '')
+        new(ERROR_DIV0, error_info)
+      end
     end
   end
 
   ERROR_VALUE = '#VALUE!'.freeze
   ERROR_NUM = '#NUM!'.freeze
   ERROR_NA = '#N/A'.freeze
+  ERROR_DIV0 = '#DIV/0!'.freeze
 
   ERRORS = [
     ERROR_VALUE,
