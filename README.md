@@ -38,6 +38,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/moneyforward/xls_function. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](./CODE_OF_CONDUCT.md).
 
+- You can create a pull request to the main branch.
+- You should not change the version on your pull request.
 
 ## License
 
