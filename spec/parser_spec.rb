@@ -68,6 +68,30 @@ RSpec.describe XlsFunction::Parser do
         right: { number: '2' }
       )
     end
+
+    it '= operator parse' do
+      is_expected.to parse('1 = 1').as(left: { number: '1' }, operator: '=', right: { number: '1' })
+    end
+
+    it '<> operator parse' do
+      is_expected.to parse('1 <> 1').as(left: { number: '1' }, operator: '<>', right: { number: '1' })
+    end
+
+    it '< operator parse' do
+      is_expected.to parse('1 < 1').as(left: { number: '1' }, operator: '<', right: { number: '1' })
+    end
+
+    it '<= operator parse' do
+      is_expected.to parse('1 <= 1').as(left: { number: '1' }, operator: '<=', right: { number: '1' })
+    end
+
+    it '> operator parse' do
+      is_expected.to parse('1 > 1').as(left: { number: '1' }, operator: '>', right: { number: '1' })
+    end
+
+    it '>= operator parse' do
+      is_expected.to parse('1 >= 1').as(left: { number: '1' }, operator: '>=', right: { number: '1' })
+    end
   end
 
   describe 'function call with variant' do
