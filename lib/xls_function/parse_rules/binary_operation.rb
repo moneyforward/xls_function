@@ -7,7 +7,7 @@ module XlsFunction
           rule(:multiple_divide_operator) { match['*/'].as(:operator) >> space? }
           rule(:plus_minus_opeartor) { match['+-'].as(:operator) >> space? }
           rule(:concat_opeartor) { str('&').as(:operator) >> space? }
-          rule(:comparison_operator) { (str('>') | str('>=') | str('<') | str('<=') | str('=') | str('<>')).as(:operator) >> space? }
+          rule(:comparison_operator) { (str('<>') | str('>=') | str('<=') | str('>') | str('<') | str('=')).as(:operator) >> space? }
 
           rule(:binary_operation) do
             infix_expression(
