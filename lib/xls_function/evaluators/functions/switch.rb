@@ -4,7 +4,6 @@ module XlsFunction
       class Switch < ::XlsFunction::Evaluators::FunctionEvaluator
         function_as :switch
 
-        MAX_CONDITIONS_COUNT = 126
         MAX_ARGUMENTS_COUNT = 254
         MAX_ARGUMENTS_COUNT.times do |n|
           text_name = :"condition#{n + 1}"
@@ -16,40 +15,35 @@ module XlsFunction
         end
 
         def eval
-          arr = Array.new(MAX_ARGUMENTS_COUNT) do |index|
-            condition_of(index + 1)
-          end
-
-          replace(arr[0], conditions(arr), not_match(arr))
+          replace(condition_of(1), conditions(items), not_match(items))
         end
 
         private
 
         def conditions(args)
-          conditions = items(args)
-          condition_all(to_hash(conditions))
+          args.delete_at(0)
+          args.length.odd? ? args.pop : args
+          to_hash(args)
+        end
+
+        def items
+          items = []
+          MAX_ARGUMENTS_COUNT.times do |n|
+            items << condition_of(n + 1)
+          end
+          items.compact!
+          items
         end
 
         def to_hash(args)
-          items = args.length.odd? ? args.pop : args
-          Hash[*items]
-        end
+          # return args if args.length.zero?
 
-        def condition_all(args)
-          conditions = items(args)
-          conditions.keys.length <= MAX_CONDITIONS_COUNT ? conditions : conditions[0..MAX_CONDITIONS_COUNT]
-        end
-
-        def items(args)
-          return args if args.length.zero?
-
-          args.delete_at(1)
-          args
+          Hash[*args]
         end
 
         def not_match(args)
-          items = items(args)
-          items.length.odd? ? args.last : nil
+          args.delete_at(1)
+          args.length.odd? ? args.last : nil
         end
 
         def replace(source, conditions, not_match)
