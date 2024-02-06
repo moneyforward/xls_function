@@ -36,8 +36,6 @@ module XlsFunction
         end
 
         def to_hash(args)
-          # return args if args.length.zero?
-
           Hash[*args]
         end
 
