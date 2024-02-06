@@ -57,6 +57,7 @@ en:
       upper: UPPER(text) Converts text to uppercase.
       value: VALUE(text) Converts a text string that represents a number to a number.
       year: YEAR(serial_number) Returns the year corresponding to a date. The year is returned as an integer in the range 1900-9999.
+      switch: SWITCH(Value to switch, Value to match1...[2-126], Value to return if there's a match1...[2-126], Value to return if there's no match) Where you can evaluate up to 126 matching values and results.
     errors:
       out_of_range: Value is out of range. %{value}
       missing_target: Missing %{target} in %{source}.
