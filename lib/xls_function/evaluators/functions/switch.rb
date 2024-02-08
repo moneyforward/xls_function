@@ -17,7 +17,7 @@ module XlsFunction
             return expr&.evaluate(context) if value&.evaluate(context).nil?
           end
 
-          XlsFunction::ErrorValue.na
+          XlsFunction::ErrorValue.na(class_info(error_message(:missing_value_for_function)))
         end
       end
     end
