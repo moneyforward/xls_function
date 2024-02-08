@@ -4,51 +4,19 @@ module XlsFunction
       class Switch < ::XlsFunction::Evaluators::FunctionEvaluator
         function_as :switch
 
-        MAX_ARGUMENTS_COUNT = 254
-        MAX_ARGUMENTS_COUNT.times do |n|
-          text_name = :"condition#{n + 1}"
-          define_arg text_name
-        end
-
-        def condition_of(number)
-          send(:"condition#{number}")
+        def eval_arglist
+          # Skip common argument evaluation and assignment for short-circuit
         end
 
         def eval
-          replace(condition_of(1), conditions(items), not_match(items))
-        end
+          condition = arg_list.first.evaluate(context)
 
-        private
+          arg_list[1..-1].each_slice(2) do |expr, value|
+            return value&.evaluate(context) if expr&.evaluate(context) == condition
 
-        def conditions(args)
-          args.delete_at(0)
-          args.length.odd? ? args.pop : args
-          to_hash(args)
-        end
-
-        def items
-          items = []
-          MAX_ARGUMENTS_COUNT.times do |n|
-            items << condition_of(n + 1)
+            return expr&.evaluate(context) if value&.evaluate(context).nil?
           end
-          items.compact!
-          items
-        end
-
-        def to_hash(args)
-          Hash[*args]
-        end
-
-        def not_match(args)
-          args.delete_at(1)
-          args.length.odd? ? args.last : nil
-        end
-
-        def replace(source, conditions, not_match)
-          conditions.each do |condition, value|
-            return value if source == condition
-          end
-          not_match.nil? ? ::XlsFunction::ErrorValue.na : not_match
+          XlsFunction::ErrorValue.na
         end
       end
     end
