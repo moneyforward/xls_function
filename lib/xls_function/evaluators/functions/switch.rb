@@ -16,6 +16,7 @@ module XlsFunction
 
             return expr&.evaluate(context) if value&.evaluate(context).nil?
           end
+
           XlsFunction::ErrorValue.na
         end
       end
