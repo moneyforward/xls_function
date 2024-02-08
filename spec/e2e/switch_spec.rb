@@ -19,5 +19,11 @@ RSpec.describe XlsFunction do
 
       it { is_expected.to eq('#N/A') }
     end
+
+    context 'when there are more than 126 arguments' do
+      let(:input) { 'SWITCH("abc", ' + (1..127).map { |i| "\"#{i}\", \"match\"" }.join(', ') + ', "not match")' }
+
+      it { is_expected.to eq('#N/A') }
+    end
   end
 end
