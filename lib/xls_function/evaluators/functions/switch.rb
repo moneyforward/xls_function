@@ -10,12 +10,8 @@ module XlsFunction
 
         def eval
           condition = arg_list.first.evaluate(context)
-          count = 0
 
           arg_list[1..-1].each_slice(2) do |expr, value|
-            count += 1
-            break if count > 126
-
             return value&.evaluate(context) if expr&.evaluate(context) == condition
 
             return expr&.evaluate(context) if value&.evaluate(context).nil?
