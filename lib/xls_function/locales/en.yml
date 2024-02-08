@@ -67,4 +67,4 @@ en:
       cannot_convert_to_time: Cannot convert %{source} to time.
       cannot_divide_by_zero: "Cannot divide by zero."
       invalid_value_for_function: Invalid value for formula or function.
-      missing_value_for_function: 'Value to return if no matching value' is not specified.
+      missing_value_for_function: "'Value to return if no matching value' is not specified."
