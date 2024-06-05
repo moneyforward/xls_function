@@ -53,5 +53,13 @@ RSpec.describe XlsFunction do
         is_expected.to eq('㈱ ｴｸｾﾙ ｴｸｾﾙ') # Only 1-byte spaces
       end
     end
+
+    context 'when the string is English' do
+      let!(:string) { 'Hello, world!' }
+
+      it 'doesn\'t convert' do
+        is_expected.to eq('Hello, world!')
+      end
+    end
   end
 end
