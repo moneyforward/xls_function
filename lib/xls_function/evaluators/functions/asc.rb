@@ -9,7 +9,7 @@ module XlsFunction
         define_arg :source
 
         def eval
-          NKF.nkf('-w -Z4 -x --ic=UTF-8 --oc=UTF-8', source)
+          NKF.nkf('-w -Z1 -Z4 -x --ic=UTF-8 --oc=UTF-8', source)
         end
       end
     end
