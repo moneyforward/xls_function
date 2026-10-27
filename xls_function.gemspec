@@ -26,5 +26,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'i18n', '>= 1.10.0'
   spec.add_dependency 'parslet', '>= 2.0.0'
-  spec.add_dependency 'wareki', '>= 1.1.0', '< 2'
+  spec.add_dependency 'wareki', '>= 1.1.0'
 end
